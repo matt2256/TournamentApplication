@@ -18,7 +18,7 @@ namespace DataAccess.CRUD
         {
             Matchup matchup = new Matchup
             {
-
+                
             };
         }
 
@@ -29,7 +29,11 @@ namespace DataAccess.CRUD
         {
             MatchupEntries matchupEntries = new MatchupEntries
             {
+                //Represent the id of a match 
+                MatchupID = // set to custom textbox in wpf 
 
+                //Represent the score of a match
+                Score = // set to custom textbox in wpf
             };
         }
 
@@ -40,7 +44,14 @@ namespace DataAccess.CRUD
         {
             People people = new People()
             {
+                //Represent the first name of the player
+                FirstName = //set to custom textbox in wpf
+                
+                //Represnt the last name of the player
+                LastName = //set to custom textbox in wpf
 
+                //Represent the ingame or game name of the player
+                PeoplePlayerName = //set to cusom textbox in wpf
             };
         }
 
@@ -51,7 +62,8 @@ namespace DataAccess.CRUD
         {
             TeamMembers teamMembers = new TeamMembers()
             {
-
+                //Represent the name of the team 
+                TeamID = //set to custom textbox in wpf 
             };
         }
 
@@ -62,7 +74,8 @@ namespace DataAccess.CRUD
         {
             Teams teams = new Teams
             {
-
+                //Represent the name of the team 
+                TeamID = //set to custom textbox in wpf 
             };
         }
 
@@ -73,7 +86,7 @@ namespace DataAccess.CRUD
         {
             TournamentEntries tournamentEntries = new TournamentEntries
             {
-
+                TournamentID = // Set to custom textbox in wpf 
             };
         }
 
@@ -84,7 +97,7 @@ namespace DataAccess.CRUD
         {
             Tournaments tournaments = new Tournaments
             {
-
+                TournamentName = // Set to custom textbox in wpf 
             };
         }
 
