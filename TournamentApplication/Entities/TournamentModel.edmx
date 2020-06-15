@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="WinnerID" Type="int" />
           <Property Name="MatchupRound" Type="int" />
           <Property Name="TeamID_One" Type="varchar" MaxLength="50" Nullable="false" />
@@ -19,7 +19,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MatchupID" Type="int" />
           <Property Name="ParrentMatchupID" Type="int" />
           <Property Name="TeamCompedingID" Type="int" Nullable="false" />
@@ -29,7 +29,7 @@
           <Key>
             <PropertyRef Name="PeoplePlayerName" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" />
           <Property Name="LastName" Type="varchar" MaxLength="50" />
           <Property Name="PeoplePlayerName" Type="varchar" MaxLength="50" Nullable="false" />
@@ -38,7 +38,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TeamID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PlayerName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -46,14 +46,14 @@
           <Key>
             <PropertyRef Name="TeamID" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TeamID" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="TournamentEntries">
           <Key>
             <PropertyRef Name="TournamentID" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TournamentID" Type="int" Nullable="false" />
           <Property Name="TeamID_Tournament" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -61,7 +61,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TournamentName" Type="varchar" MaxLength="50" />
           <Property Name="TournamentID" Type="int" />
         </EntityType>
@@ -195,78 +195,78 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="WinnerID" Type="Int32" />
           <Property Name="MatchupRound" Type="Int32" />
           <Property Name="TeamID_One" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TeamID_Two" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Teams" Relationship="Self.FK_Matchup_TeamID_One" FromRole="Matchup" ToRole="Teams" />
-          <NavigationProperty Name="Teams1" Relationship="Self.FK_Matchup_TeamID_Two" FromRole="Matchup" ToRole="Teams" />
+          <NavigationProperty Name="Team" Relationship="Self.FK_Matchup_TeamID_One" FromRole="Matchup" ToRole="Teams" />
+          <NavigationProperty Name="Team1" Relationship="Self.FK_Matchup_TeamID_Two" FromRole="Matchup" ToRole="Teams" />
           <NavigationProperty Name="MatchupEntries" Relationship="Self.FK_MatchupEntries_TeamCompeding" FromRole="Matchup" ToRole="MatchupEntries" />
         </EntityType>
-        <EntityType Name="MatchupEntries">
+        <EntityType Name="MatchupEntry">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MatchupID" Type="Int32" />
           <Property Name="ParrentMatchupID" Type="Int32" />
           <Property Name="TeamCompedingID" Type="Int32" Nullable="false" />
           <Property Name="Score" Type="Int32" />
           <NavigationProperty Name="Matchup" Relationship="Self.FK_MatchupEntries_TeamCompeding" FromRole="MatchupEntries" ToRole="Matchup" />
         </EntityType>
-        <EntityType Name="People">
+        <EntityType Name="Person">
           <Key>
             <PropertyRef Name="PeoplePlayerName" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PeoplePlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="TeamMembers" Relationship="Self.FK_TeamMembers_PeoplePlayerName" FromRole="People" ToRole="TeamMembers" />
         </EntityType>
-        <EntityType Name="TeamMembers">
+        <EntityType Name="TeamMember">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TeamID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="People" Relationship="Self.FK_TeamMembers_PeoplePlayerName" FromRole="TeamMembers" ToRole="People" />
-          <NavigationProperty Name="Teams" Relationship="Self.FK_TeamMembers_TeamId" FromRole="TeamMembers" ToRole="Teams" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_TeamMembers_PeoplePlayerName" FromRole="TeamMembers" ToRole="People" />
+          <NavigationProperty Name="Team" Relationship="Self.FK_TeamMembers_TeamId" FromRole="TeamMembers" ToRole="Teams" />
         </EntityType>
-        <EntityType Name="Teams">
+        <EntityType Name="Team">
           <Key>
             <PropertyRef Name="TeamID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TeamID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Matchup" Relationship="Self.FK_Matchup_TeamID_One" FromRole="Teams" ToRole="Matchup" />
-          <NavigationProperty Name="Matchup1" Relationship="Self.FK_Matchup_TeamID_Two" FromRole="Teams" ToRole="Matchup" />
+          <NavigationProperty Name="Matchups" Relationship="Self.FK_Matchup_TeamID_One" FromRole="Teams" ToRole="Matchup" />
+          <NavigationProperty Name="Matchups1" Relationship="Self.FK_Matchup_TeamID_Two" FromRole="Teams" ToRole="Matchup" />
           <NavigationProperty Name="TeamMembers" Relationship="Self.FK_TeamMembers_TeamId" FromRole="Teams" ToRole="TeamMembers" />
           <NavigationProperty Name="TournamentEntries" Relationship="Self.FK_TournamentEntries_TeamID_Tournament" FromRole="Teams" ToRole="TournamentEntries" />
         </EntityType>
-        <EntityType Name="TournamentEntries">
+        <EntityType Name="TournamentEntry">
           <Key>
             <PropertyRef Name="TournamentID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TournamentID" Type="Int32" Nullable="false" />
           <Property Name="TeamID_Tournament" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Teams" Relationship="Self.FK_TournamentEntries_TeamID_Tournament" FromRole="TournamentEntries" ToRole="Teams" />
+          <NavigationProperty Name="Team" Relationship="Self.FK_TournamentEntries_TeamID_Tournament" FromRole="TournamentEntries" ToRole="Teams" />
           <NavigationProperty Name="Tournaments" Relationship="Self.FK_Tournaments_TournamentID" FromRole="TournamentEntries" ToRole="Tournaments" />
         </EntityType>
-        <EntityType Name="Tournaments">
+        <EntityType Name="Tournament">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TournamentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TournamentID" Type="Int32" />
-          <NavigationProperty Name="TournamentEntries" Relationship="Self.FK_Tournaments_TournamentID" FromRole="Tournaments" ToRole="TournamentEntries" />
+          <NavigationProperty Name="TournamentEntry" Relationship="Self.FK_Tournaments_TournamentID" FromRole="Tournaments" ToRole="TournamentEntries" />
         </EntityType>
         <Association Name="FK_Matchup_TeamID_One">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
+          <End Role="Teams" Type="Self.Team" Multiplicity="1" />
           <End Role="Matchup" Type="Self.Matchup" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teams">
@@ -278,7 +278,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Matchup_TeamID_Two">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
+          <End Role="Teams" Type="Self.Team" Multiplicity="1" />
           <End Role="Matchup" Type="Self.Matchup" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teams">
@@ -291,7 +291,7 @@
         </Association>
         <Association Name="FK_MatchupEntries_TeamCompeding">
           <End Role="Matchup" Type="Self.Matchup" Multiplicity="1" />
-          <End Role="MatchupEntries" Type="Self.MatchupEntries" Multiplicity="*" />
+          <End Role="MatchupEntries" Type="Self.MatchupEntry" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Matchup">
               <PropertyRef Name="Id" />
@@ -302,8 +302,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TeamMembers_PeoplePlayerName">
-          <End Role="People" Type="Self.People" Multiplicity="1" />
-          <End Role="TeamMembers" Type="Self.TeamMembers" Multiplicity="*" />
+          <End Role="People" Type="Self.Person" Multiplicity="1" />
+          <End Role="TeamMembers" Type="Self.TeamMember" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="People">
               <PropertyRef Name="PeoplePlayerName" />
@@ -314,8 +314,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TeamMembers_TeamId">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
-          <End Role="TeamMembers" Type="Self.TeamMembers" Multiplicity="*" />
+          <End Role="Teams" Type="Self.Team" Multiplicity="1" />
+          <End Role="TeamMembers" Type="Self.TeamMember" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teams">
               <PropertyRef Name="TeamID" />
@@ -326,8 +326,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TournamentEntries_TeamID_Tournament">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="0..1" />
-          <End Role="TournamentEntries" Type="Self.TournamentEntries" Multiplicity="*" />
+          <End Role="Teams" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="TournamentEntries" Type="Self.TournamentEntry" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teams">
               <PropertyRef Name="TeamID" />
@@ -338,8 +338,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tournaments_TournamentID">
-          <End Role="TournamentEntries" Type="Self.TournamentEntries" Multiplicity="0..1" />
-          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="*" />
+          <End Role="TournamentEntries" Type="Self.TournamentEntry" Multiplicity="0..1" />
+          <End Role="Tournaments" Type="Self.Tournament" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TournamentEntries">
               <PropertyRef Name="TournamentID" />
@@ -350,23 +350,23 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="TournamentEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Matchup" EntityType="Self.Matchup" />
-          <EntitySet Name="MatchupEntries" EntityType="Self.MatchupEntries" />
-          <EntitySet Name="People" EntityType="Self.People" />
-          <EntitySet Name="TeamMembers" EntityType="Self.TeamMembers" />
-          <EntitySet Name="Teams" EntityType="Self.Teams" />
-          <EntitySet Name="TournamentEntries" EntityType="Self.TournamentEntries" />
-          <EntitySet Name="Tournaments" EntityType="Self.Tournaments" />
+          <EntitySet Name="Matchups" EntityType="Self.Matchup" />
+          <EntitySet Name="MatchupEntries" EntityType="Self.MatchupEntry" />
+          <EntitySet Name="People" EntityType="Self.Person" />
+          <EntitySet Name="TeamMembers" EntityType="Self.TeamMember" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
+          <EntitySet Name="TournamentEntries" EntityType="Self.TournamentEntry" />
+          <EntitySet Name="Tournaments" EntityType="Self.Tournament" />
           <AssociationSet Name="FK_Matchup_TeamID_One" Association="Self.FK_Matchup_TeamID_One">
             <End Role="Teams" EntitySet="Teams" />
-            <End Role="Matchup" EntitySet="Matchup" />
+            <End Role="Matchup" EntitySet="Matchups" />
           </AssociationSet>
           <AssociationSet Name="FK_Matchup_TeamID_Two" Association="Self.FK_Matchup_TeamID_Two">
             <End Role="Teams" EntitySet="Teams" />
-            <End Role="Matchup" EntitySet="Matchup" />
+            <End Role="Matchup" EntitySet="Matchups" />
           </AssociationSet>
           <AssociationSet Name="FK_MatchupEntries_TeamCompeding" Association="Self.FK_MatchupEntries_TeamCompeding">
-            <End Role="Matchup" EntitySet="Matchup" />
+            <End Role="Matchup" EntitySet="Matchups" />
             <End Role="MatchupEntries" EntitySet="MatchupEntries" />
           </AssociationSet>
           <AssociationSet Name="FK_TeamMembers_PeoplePlayerName" Association="Self.FK_TeamMembers_PeoplePlayerName">
@@ -392,7 +392,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="TournamentModelStoreContainer" CdmEntityContainer="TournamentEntities">
-          <EntitySetMapping Name="Matchup">
+          <EntitySetMapping Name="Matchups">
             <EntityTypeMapping TypeName="TournamentModel.Matchup">
               <MappingFragment StoreEntitySet="Matchup">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -404,7 +404,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MatchupEntries">
-            <EntityTypeMapping TypeName="TournamentModel.MatchupEntries">
+            <EntityTypeMapping TypeName="TournamentModel.MatchupEntry">
               <MappingFragment StoreEntitySet="MatchupEntries">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="MatchupID" ColumnName="MatchupID" />
@@ -415,7 +415,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="People">
-            <EntityTypeMapping TypeName="TournamentModel.People">
+            <EntityTypeMapping TypeName="TournamentModel.Person">
               <MappingFragment StoreEntitySet="People">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -425,7 +425,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TeamMembers">
-            <EntityTypeMapping TypeName="TournamentModel.TeamMembers">
+            <EntityTypeMapping TypeName="TournamentModel.TeamMember">
               <MappingFragment StoreEntitySet="TeamMembers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TeamID" ColumnName="TeamID" />
@@ -434,7 +434,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Teams">
-            <EntityTypeMapping TypeName="TournamentModel.Teams">
+            <EntityTypeMapping TypeName="TournamentModel.Team">
               <MappingFragment StoreEntitySet="Teams">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TeamID" ColumnName="TeamID" />
@@ -442,7 +442,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TournamentEntries">
-            <EntityTypeMapping TypeName="TournamentModel.TournamentEntries">
+            <EntityTypeMapping TypeName="TournamentModel.TournamentEntry">
               <MappingFragment StoreEntitySet="TournamentEntries">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TournamentID" ColumnName="TournamentID" />
@@ -451,7 +451,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tournaments">
-            <EntityTypeMapping TypeName="TournamentModel.Tournaments">
+            <EntityTypeMapping TypeName="TournamentModel.Tournament">
               <MappingFragment StoreEntitySet="Tournaments">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TournamentName" ColumnName="TournamentName" />
@@ -473,7 +473,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

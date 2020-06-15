@@ -12,12 +12,13 @@ namespace Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Tournaments
+    public partial class TeamMember
     {
         public int Id { get; set; }
-        public string TournamentName { get; set; }
-        public Nullable<int> TournamentID { get; set; }
+        public string TeamID { get; set; }
+        public string PlayerName { get; set; }
     
-        public virtual TournamentEntries TournamentEntries { get; set; }
+        public virtual Person Person { get; set; }
+        public virtual Team Team { get; set; }
     }
 }

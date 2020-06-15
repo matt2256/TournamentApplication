@@ -25,12 +25,12 @@ namespace Entities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Matchup> Matchup { get; set; }
-        public virtual DbSet<MatchupEntries> MatchupEntries { get; set; }
-        public virtual DbSet<People> People { get; set; }
-        public virtual DbSet<TeamMembers> TeamMembers { get; set; }
-        public virtual DbSet<Teams> Teams { get; set; }
-        public virtual DbSet<TournamentEntries> TournamentEntries { get; set; }
-        public virtual DbSet<Tournaments> Tournaments { get; set; }
+        public virtual DbSet<Matchup> Matchups { get; set; }
+        public virtual DbSet<MatchupEntry> MatchupEntries { get; set; }
+        public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<TeamMember> TeamMembers { get; set; }
+        public virtual DbSet<Team> Teams { get; set; }
+        public virtual DbSet<TournamentEntry> TournamentEntries { get; set; }
+        public virtual DbSet<Tournament> Tournaments { get; set; }
     }
 }

@@ -12,27 +12,27 @@ namespace Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Teams
+    public partial class Team
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Teams()
+        public Team()
         {
-            this.Matchup = new HashSet<Matchup>();
-            this.Matchup1 = new HashSet<Matchup>();
-            this.TeamMembers = new HashSet<TeamMembers>();
-            this.TournamentEntries = new HashSet<TournamentEntries>();
+            this.Matchups = new HashSet<Matchup>();
+            this.Matchups1 = new HashSet<Matchup>();
+            this.TeamMembers = new HashSet<TeamMember>();
+            this.TournamentEntries = new HashSet<TournamentEntry>();
         }
     
         public int Id { get; set; }
         public string TeamID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Matchup> Matchup { get; set; }
+        public virtual ICollection<Matchup> Matchups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Matchup> Matchup1 { get; set; }
+        public virtual ICollection<Matchup> Matchups1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TeamMembers> TeamMembers { get; set; }
+        public virtual ICollection<TeamMember> TeamMembers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TournamentEntries> TournamentEntries { get; set; }
+        public virtual ICollection<TournamentEntry> TournamentEntries { get; set; }
     }
 }
