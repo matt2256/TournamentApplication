@@ -5,26 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="600">
+        Title="MainWindow" Height="800" Width="600" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="PlayerSource"/>
+    </Window.Resources>
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="158,213,0,0" TextWrapping="Wrap" x:Name="TBPlayerFirstName" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="158,265,0,0" TextWrapping="Wrap" x:Name="TBPlayerLastName" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="158,315,0,0" TextWrapping="Wrap" x:Name="TBPlayerInGameName" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Opret Spiller" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbCreatePlayer"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="386,32,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgLogo"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="158,213,0,0" TextWrapping="Wrap" x:Name="TBPlayerFirstName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="158,265,0,0" TextWrapping="Wrap" x:Name="TBPlayerLastName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="158,315,0,0" TextWrapping="Wrap" x:Name="TBPlayerInGameName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label Content="Opret Spiller" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbCreatePlayer" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="165,32,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgLogo" Grid.Column="1"/>
         <Label Content="First Name" x:Name="LbPlayerFirstName" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
         <Label Content="Last Name" x:Name="LbPlayerLastName" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
         <Label Content="Player Name" x:Name="LbPlayerInGameName" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="97" Height="27"/>
         <Button Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
-        <DataGrid ItemsSource="{Binding}" x:Name="DtgPlayerInfo" HorizontalAlignment="Left" Height="276" Margin="10,483,0,0" VerticalAlignment="Top" Width="572">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
-
-
+        <DataGrid DataContext="{StaticResource PlayerSource}" ItemsSource="{Binding}" x:Name="DtgPlayerInfo" HorizontalAlignment="Left" Height="276" Margin="10,483,0,0" VerticalAlignment="Top" Width="572" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
