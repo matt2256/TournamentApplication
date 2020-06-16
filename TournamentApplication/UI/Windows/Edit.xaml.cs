@@ -33,23 +33,5 @@ namespace UI.Windows
             Update update = new Update();
             update.UpdatePeople(Convert.ToInt32(TBPlayerId.Text), TBPlayerFirstName.Text, TBPlayerLastName.Text, TBPlayerInGameName.Text);
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            LoadDtg();
-        }
-
-        public void LoadDtg()
-        {
-            CollectionViewSource EditSource = ((CollectionViewSource)(this.FindResource("EditSource")));
-
-            TournamentEntities _context = new TournamentEntities();
-
-            _context.People.Load();
-
-            EditSource.Source = _context.People.Local;
-        }
-
-        
     }
 }

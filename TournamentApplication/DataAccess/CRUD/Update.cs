@@ -16,8 +16,8 @@ namespace DataAccess.CRUD
         {
             TournamentEntities context = new TournamentEntities();
 
-            var people = context.People.First<Person>();
-            people.Id = _Id;
+            Person people = context.People.First(i => i.Id == _Id);
+
             people.FirstName = _Fname;
             people.LastName = _Lname;
             people.PeoplePlayerName = _IGname;

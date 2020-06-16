@@ -3,12 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UI.Windows"
+        xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="Edit" Height="800" Width="600" Loaded="Window_Loaded">
-    <Window.Resources>
-        <CollectionViewSource x:Key="EditSource"/>
-    </Window.Resources>
+        Title="Edit" Height="800" Width="600">
+   
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="158,213,0,0" TextWrapping="Wrap" x:Name="TBPlayerFirstName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="158,169,0,0" TextWrapping="Wrap" x:Name="TBPlayerId" Text="" VerticalAlignment="Top" Width="120"/>
@@ -21,7 +19,7 @@
         <Label Content="ID" x:Name="LbPlayerId" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
         <Label Content="Player Name" x:Name="LbPlayerInGameName" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="97" Height="27"/>
         <Button x:Name="BtnEditPlayer" Content="Edit Player " HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="BtnEditPlayer_Click"/>
-        <DataGrid DataContext="{StaticResource EditSource}" ItemsSource="{Binding}" x:Name="DtgPlayerInfo" HorizontalAlignment="Left" Height="276" Margin="10,483,0,0" VerticalAlignment="Top" Width="572" Grid.ColumnSpan="2"/>
+        <DataGrid ItemsSource="{Binding}" x:Name="DtgPlayerInfo" HorizontalAlignment="Left" Height="276" Margin="10,483,0,0" VerticalAlignment="Top" Width="572" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

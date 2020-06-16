@@ -29,13 +29,15 @@ namespace UI
         public MainWindow()
         {
             InitializeComponent();
-
+            LoadDtg();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         { 
             Create create = new Create();
             create.CreatePeople(TBPlayerFirstName.Text, TBPlayerLastName.Text, TBPlayerInGameName.Text);
+
+            LoadDtg();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
