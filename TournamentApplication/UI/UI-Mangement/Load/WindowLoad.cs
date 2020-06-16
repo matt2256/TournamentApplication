@@ -13,15 +13,15 @@ namespace UI.UI_Mangement.Load
 {
     public class WindowLoad
     {
-        public void LoadWindow()
-        {
-            CollectionViewSource PlayerSource = ((CollectionViewSource)(UI.MainWindow.FindResource("PlayerSource"));
+        //public void LoadWindow()
+        //{
+        //    CollectionViewSource PlayerSource = ((CollectionViewSource)(UI.MainWindow.FindResource("PlayerSource"));
 
-            TournamentEntities _context = new TournamentEntities();
+        //    TournamentEntities _context = new TournamentEntities();
 
-            _context.People.Load();
+        //    _context.People.Load();
 
-            PlayerSource.Source = _context.People.Local;
-        }
+        //    PlayerSource.Source = _context.People.Local;
+        //}
     }
 }

@@ -10,45 +10,46 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DataAccess.CRUD;
-using System.Data;
 using Entities;
 using System.Data.Entity;
-using UI.UI_Mangement.Load;
+using UI.Windows;
 
-
-namespace UI
+namespace UI.Windows
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Edit.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Edit : Window
     {
-        public MainWindow()
+        public Edit()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        { 
-            Create create = new Create();
-            create.CreatePeople(TBPlayerFirstName.Text, TBPlayerLastName.Text, TBPlayerInGameName.Text);
+        private void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            Update update = new Update();
+            update.UpdatePeople(Convert.ToInt32(TBPlayerId.Text), TBPlayerFirstName.Text, TBPlayerLastName.Text, TBPlayerInGameName.Text);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            WindowLoad windowLoad = new WindowLoad();
-            windowLoad.LoadWindow();
+            LoadDtg();
+        }
 
-            CollectionViewSource PlayerSource = ((CollectionViewSource)(this.FindResource("PlayerSource")));
+        public void LoadDtg()
+        {
+            CollectionViewSource EditSource = ((CollectionViewSource)(this.FindResource("EditSource")));
 
             TournamentEntities _context = new TournamentEntities();
 
             _context.People.Load();
 
-            PlayerSource.Source = _context.People.Local;
+            EditSource.Source = _context.People.Local;
         }
+
+        
     }
 }
