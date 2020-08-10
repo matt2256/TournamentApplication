@@ -8,6 +8,10 @@
         Title="MainWindow" Height="800" Width="600" Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="PlayerSource"/>
+        <CollectionViewSource x:Key="TeamMemberSource"/>
+        <CollectionViewSource x:Key="TeamSource"/>
+        <CollectionViewSource x:Key="TournamentSource"/>
+        <CollectionViewSource x:Key="TournamentOverviewSource"/>
     </Window.Resources>
     <TabControl>
         <TabItem Header="Spiller" Width="60" Height="30">
@@ -43,6 +47,7 @@
                 <Button x:Name="BtnTeamMemberEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button x:Name="BtnTeamMemberDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
+                <DataGrid DataContext="{StaticResource TeamMemberSource}" ItemsSource="{Binding}" x:Name="DtgTeamMembersInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
         </TabItem>
         <TabItem Header="Hold" Width="60" Height="30">
@@ -56,6 +61,7 @@
                 <Button x:Name="BtnTeamEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button x:Name="BtnTeamDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
+                <DataGrid DataContext="{StaticResource TeamSource}" ItemsSource="{Binding}" x:Name="DtgTeamInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
         </TabItem>
         <TabItem Header="Tuneringer tilmelding" Width="140" Height="30">
@@ -69,6 +75,7 @@
                 <Button x:Name="BtnTournamentEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button x:Name="BtnTournamentDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
+                <DataGrid DataContext="{StaticResource TournamentSource}" ItemsSource="{Binding}" x:Name="DtgTournamentInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
         </TabItem>
         <TabItem Header="Tunerings overblik" Width="130" Height="30">
@@ -82,6 +89,7 @@
                 <Button x:Name="BtnTournamentOverviewEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button x:Name="BtnTournamentOverviewDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
+                <DataGrid DataContext="{StaticResource TournamentOverviewSource}" ItemsSource="{Binding}" x:Name="DtgTournamentOverviewInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
         </TabItem>
     </TabControl>
