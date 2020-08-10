@@ -21,8 +21,9 @@
                 <TextBox HorizontalAlignment="Left" Height="23" Margin="158,213,0,0" TextWrapping="Wrap" x:Name="TBPlayerFirstName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                 <TextBox HorizontalAlignment="Left" Height="23" Margin="158,265,0,0" TextWrapping="Wrap" x:Name="TBPlayerLastName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                 <TextBox HorizontalAlignment="Left" Height="27" Margin="158,315,0,0" TextWrapping="Wrap" x:Name="TBPlayerInGameName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-                <!--Label-->
-                <Label Content="Opret Spiller" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbCreatePlayer" Grid.ColumnSpan="2"/>
+                <!--Label - MAIN HEADER-->
+                <Label Content="Spiller" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbPlayer"/>
+                <!--Labels for textbox information-->
                 <Label Content="First Name" x:Name="LbPlayerFirstName" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Last Name" x:Name="LbPlayerLastName" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Player Name" x:Name="LbPlayerInGameName" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="97" Height="27"/>
@@ -40,7 +41,10 @@
             <!--TeamMembers UI content-->
             <Grid>
                 <!--Textbox-->
+                <!--Label - MAIN HEADER-->
+                <Label Content="Hold medlemmere" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTeamMembers"/>
                 <!--Label-->
+                
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTeamMembersLogo"/>
                 <!--Buttons-->
@@ -55,6 +59,8 @@
             <!--Teams UI content-->
             <Grid>
                 <!--Textbox-->
+                <!--Label - MAIN HEADER-->
+                <Label Content="Hold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTeam"/>
                 <!--Label-->
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTeamLogo"/>
@@ -70,6 +76,8 @@
             <!--Tournament entries UI content-->
             <Grid>
                 <!--Textbox-->
+                <!--Label - MAIN HEADER-->
+                <Label Content="Opret tunering" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTournament"/>
                 <!--Label-->
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTournamentLogo"/>
@@ -85,6 +93,8 @@
             <!--Tournament overview UI content-->
             <Grid>
                 <!--Textbox-->
+                <!--Label - MAIN HEADER-->
+                <Label Content="Tunerings overblik" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTournamentOverview"/>
                 <!--Label-->
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTournamentOverviewLogo"/>
