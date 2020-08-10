@@ -11,31 +11,65 @@
     </Window.Resources>
     <TabControl>
         <TabItem Header="Spiller" Width="60" Height="30">
+            <!--Player UI content-->
             <Grid>
+                <!--Textbox-->
                 <TextBox HorizontalAlignment="Left" Height="23" Margin="158,213,0,0" TextWrapping="Wrap" x:Name="TBPlayerFirstName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                 <TextBox HorizontalAlignment="Left" Height="23" Margin="158,265,0,0" TextWrapping="Wrap" x:Name="TBPlayerLastName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                 <TextBox HorizontalAlignment="Left" Height="27" Margin="158,315,0,0" TextWrapping="Wrap" x:Name="TBPlayerInGameName" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                <!--Label-->
                 <Label Content="Opret Spiller" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbCreatePlayer" Grid.ColumnSpan="2"/>
-                <Image HorizontalAlignment="Left" Height="150" Margin="165,32,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgLogo" Grid.Column="1"/>
                 <Label Content="First Name" x:Name="LbPlayerFirstName" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Last Name" x:Name="LbPlayerLastName" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Player Name" x:Name="LbPlayerInGameName" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="97" Height="27"/>
+                <!--Image used to represet a logo-->
+                <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgLogo"/>
+                <!--Buttons-->
                 <Button x:Name="BtnCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
-                <DataGrid DataContext="{StaticResource PlayerSource}" ItemsSource="{Binding}" x:Name="DtgPlayerInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
                 <Button x:Name="BtnEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75" Click="BtnEdit_Click"/>
+                <!--Datagrid-->
+                <DataGrid DataContext="{StaticResource PlayerSource}" ItemsSource="{Binding}" x:Name="DtgPlayerInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
         </TabItem>
         <TabItem Header="Hold Medlemmere" Width="120" Height="30">
             <!--TeamMembers UI content-->
+            <Grid>
+                <!--Textbox-->
+                <!--Label-->
+                <!--Image used for logo-->
+                <!--Buttons-->
+                <!--Datagrid-->
+            </Grid>
         </TabItem>
         <TabItem Header="Hold" Width="60" Height="30">
             <!--Teams UI content-->
+            <Grid>
+                <!--Textbox-->
+                <!--Label-->
+                <!--Image used for logo-->
+                <!--Buttons-->
+                <!--Datagrid-->
+            </Grid>
         </TabItem>
         <TabItem Header="Tuneringer tilmelding" Width="140" Height="30">
             <!--Tournament entries UI content-->
+            <Grid>
+                <!--Textbox-->
+                <!--Label-->
+                <!--Image used for logo-->
+                <!--Buttons-->
+                <!--Datagrid-->
+            </Grid>
         </TabItem>
         <TabItem Header="Tunerings overblik" Width="130" Height="30">
             <!--Tournament overview UI content-->
+            <Grid>
+                <!--Textbox-->
+                <!--Label-->
+                <!--Image used for logo-->
+                <!--Buttons-->
+                <!--Datagrid-->
+            </Grid>
         </TabItem>
     </TabControl>
 
