@@ -30,11 +30,17 @@ namespace UI
         {
             InitializeComponent();
             LoadPlayerDtg();
+            LoadTeamMemberDtg();
+            LoadTeamDtg();
+            LoadTournamentDtg();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             LoadPlayerDtg();
+            LoadTeamMemberDtg();
+            LoadTeamDtg();
+            LoadTournamentDtg();
         }
         #endregion
 
@@ -90,6 +96,16 @@ namespace UI
 
         }
 
+        public void LoadTeamMemberDtg()
+        {
+            CollectionViewSource TeamMemberSource = ((CollectionViewSource)(this.FindResource("TeamMemberSource")));
+
+            TournamentEntities _context = new TournamentEntities();
+
+            _context.TeamMembers.Load();
+
+            TeamMemberSource.Source = _context.TeamMembers.Local;
+        }
         #endregion
 
         #region Team
@@ -110,6 +126,17 @@ namespace UI
 
         }
 
+        public void LoadTeamDtg()
+        {
+            CollectionViewSource Team = ((CollectionViewSource)(this.FindResource("TeamSource")));
+
+            TournamentEntities _context = new TournamentEntities();
+
+            _context.Teams.Load();
+
+            Team.Source = _context.Teams.Local;
+        }
+
         #endregion
 
         #region Tournament
@@ -128,6 +155,17 @@ namespace UI
         private void BtnTournamentDelete_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void LoadTournamentDtg()
+        {
+            CollectionViewSource Tournament = ((CollectionViewSource)(this.FindResource("TournamentSource")));
+
+            TournamentEntities _context = new TournamentEntities();
+
+            _context.Teams.Load();
+
+            Tournament.Source = _context.Teams.Local;
         }
         #endregion
     }
