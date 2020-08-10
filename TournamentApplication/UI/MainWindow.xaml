@@ -29,10 +29,10 @@
                 <Label Content="Player Name" x:Name="LbPlayerInGameName" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="97" Height="27"/>
                 <!--Image used to represet a logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgPlayerLogo"/>
-                <!--Buttons - CHANGE EVENTHANDLERS IN MAIN TO ACCOMEDATE FOR NEW EVENTHANDLER NAME - VERY IMPORTANT!!!-->
-                <Button x:Name="BtnPlayerCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
-                <Button x:Name="BtnPlayerEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="BtnPlayerDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
+                <!--Buttons-->
+                <Button x:Name="BtnPlayerCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="BtnPlayerCreate_Click"/>
+                <Button x:Name="BtnPlayerEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75" Click="BtnPlayerEdit_Click"/>
+                <Button x:Name="BtnPlayerDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75" Click="BtnPlayerDelete_Click"/>
                 <!--Datagrid-->
                 <DataGrid DataContext="{StaticResource PlayerSource}" ItemsSource="{Binding}" x:Name="DtgPlayerInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
@@ -46,14 +46,14 @@
                 <!--Label - MAIN HEADER-->
                 <Label Content="Hold medlemmere" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTeamMembers"/>
                 <!--Labels for textbox information-->
-                <Label Content="Spiller " x:Name="LbTeamMemberName" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
+                <Label Content="Spiller navn" x:Name="LbTeamMemberName" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Spiller Id" x:Name="LbTeamMemberID" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTeamMembersLogo"/>
                 <!--Buttons-->
-                <Button x:Name="BtnTeamMemberCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
-                <Button x:Name="BtnTeamMemberEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="BtnTeamMemberDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="BtnTeamMemberCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="BtnTeamMemberCreate_Click"/>
+                <Button x:Name="BtnTeamMemberEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75" Click="BtnTeamMemberEdit_Click"/>
+                <Button x:Name="BtnTeamMemberDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75" Click="BtnTeamMemberDelete_Click"/>
                 <!--Datagrid-->
                 <DataGrid DataContext="{StaticResource TeamMemberSource}" ItemsSource="{Binding}" x:Name="DtgTeamMembersInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
@@ -72,9 +72,9 @@
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTeamLogo"/>
                 <!--Buttons-->
-                <Button x:Name="BtnTeamCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
-                <Button x:Name="BtnTeamEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="BtnTeamDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="BtnTeamCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="BtnTeamCreate_Click"/>
+                <Button x:Name="BtnTeamEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75" Click="BtnTeamEdit_Click"/>
+                <Button x:Name="BtnTeamDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75" Click="BtnTeamDelete_Click"/>
                 <!--Datagrid-->
                 <DataGrid DataContext="{StaticResource TeamSource}" ItemsSource="{Binding}" x:Name="DtgTeamInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
@@ -93,9 +93,9 @@
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTournamentLogo"/>
                 <!--Buttons-->
-                <Button x:Name="BtnTournamentCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
-                <Button x:Name="BtnTournamentEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="BtnTournamentDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="BtnTournamentCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="BtnTournamentCreate_Click"/>
+                <Button x:Name="BtnTournamentEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75" Click="BtnTournamentEdit_Click"/>
+                <Button x:Name="BtnTournamentDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75" Click="BtnTournamentDelete_Click"/>
                 <!--Datagrid-->
                 <DataGrid DataContext="{StaticResource TournamentSource}" ItemsSource="{Binding}" x:Name="DtgTournamentInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
