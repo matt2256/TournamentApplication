@@ -25,31 +25,23 @@ namespace UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Window eventhandlers
         public MainWindow()
         {
             InitializeComponent();
-            LoadDtg();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        { 
-            Create create = new Create();
-            create.CreatePeople(TBPlayerFirstName.Text, TBPlayerLastName.Text, TBPlayerInGameName.Text);
-
-            LoadDtg();
+            LoadPlayerDtg();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadDtg();
+            LoadPlayerDtg();
         }
+        #endregion
 
-        private void BtnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        #region Player
+        
 
-        public void LoadDtg()
+        public void LoadPlayerDtg()
         {
             CollectionViewSource PlayerSource = ((CollectionViewSource)(this.FindResource("PlayerSource")));
 
@@ -59,5 +51,8 @@ namespace UI
 
             PlayerSource.Source = _context.People.Local;
         }
+        #endregion
+
+
     }
 }

@@ -42,7 +42,7 @@ namespace DataAccess.CRUD
         }
 
         /// <summary>
-        /// Represent a method for creating People Data
+        /// Represent a method for creating People Data (Player)
         /// </summary>
         public void CreatePeople(string _Fname, string _Lname, string _IGname)
         {
