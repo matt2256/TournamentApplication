@@ -24,9 +24,10 @@
                 <Label Content="Player Name" x:Name="LbPlayerInGameName" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="97" Height="27"/>
                 <!--Image used to represet a logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgLogo"/>
-                <!--Buttons-->
-                <Button x:Name="BtnCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
-                <Button x:Name="BtnEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75" Click="BtnEdit_Click"/>
+                <!--Buttons - CHANGE EVENTHANDLERS IN MAIN TO ACCOMEDATE FOR NEW EVENTHANDLER NAME - VERY IMPORTANT!!!-->
+                <Button x:Name="BtnPlayerCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
+                <Button x:Name="BtnPlayerEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75" Click="BtnEdit_Click"/>
+                <Button x:Name="BtnPlayerDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
                 <DataGrid DataContext="{StaticResource PlayerSource}" ItemsSource="{Binding}" x:Name="DtgPlayerInfo" HorizontalAlignment="Left" Height="263" Margin="10,458,0,0" VerticalAlignment="Top" Width="566"/>
             </Grid>
@@ -38,6 +39,9 @@
                 <!--Label-->
                 <!--Image used for logo-->
                 <!--Buttons-->
+                <Button x:Name="BtnTeamMemberCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
+                <Button x:Name="BtnTeamMemberEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="BtnTeamMemberDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
             </Grid>
         </TabItem>
@@ -48,6 +52,9 @@
                 <!--Label-->
                 <!--Image used for logo-->
                 <!--Buttons-->
+                <Button x:Name="BtnTeamCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
+                <Button x:Name="BtnTeamEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="BtnTeamDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
             </Grid>
         </TabItem>
@@ -58,6 +65,9 @@
                 <!--Label-->
                 <!--Image used for logo-->
                 <!--Buttons-->
+                <Button x:Name="BtnTournamentCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
+                <Button x:Name="BtnTournamentEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="BtnTournamentDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
             </Grid>
         </TabItem>
@@ -68,6 +78,9 @@
                 <!--Label-->
                 <!--Image used for logo-->
                 <!--Buttons-->
+                <Button x:Name="BtnTournamentOverviewCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
+                <Button x:Name="BtnTournamentOverviewEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="BtnTournamentOverviewDelete" Content="Delete" HorizontalAlignment="Left" Margin="91,413,0,0" VerticalAlignment="Top" Width="75"/>
                 <!--Datagrid-->
             </Grid>
         </TabItem>
