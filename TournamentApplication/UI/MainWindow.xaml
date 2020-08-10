@@ -43,8 +43,9 @@
                 <!--Textbox-->
                 <!--Label - MAIN HEADER-->
                 <Label Content="Hold medlemmere" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTeamMembers"/>
-                <!--Label-->
-                
+                <!--Labels for textbox information-->
+                <Label Content="Spiller " x:Name="LbTeamMemberName" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
+                <Label Content="Spiller Id" x:Name="LbTeamMemberID" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTeamMembersLogo"/>
                 <!--Buttons-->
@@ -61,7 +62,9 @@
                 <!--Textbox-->
                 <!--Label - MAIN HEADER-->
                 <Label Content="Hold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTeam"/>
-                <!--Label-->
+                <!--Label for textbox information-->
+                <Label Content="Id" x:Name="LbTeamID" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
+                <Label Content="Team Id" x:Name="LbTeamTeamID" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTeamLogo"/>
                 <!--Buttons-->
@@ -78,7 +81,9 @@
                 <!--Textbox-->
                 <!--Label - MAIN HEADER-->
                 <Label Content="Opret tunering" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTournament"/>
-                <!--Label-->
+                <!--Label for textbox information-->
+                <Label Content="Id" x:Name="LbTournamentID" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
+                <Label Content="Tournament name" x:Name="LbTournamentName" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTournamentLogo"/>
                 <!--Buttons-->
