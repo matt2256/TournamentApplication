@@ -27,7 +27,7 @@
                 <Label Content="Last Name" x:Name="LbPlayerLastName" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Player Name" x:Name="LbPlayerInGameName" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="97" Height="27"/>
                 <!--Image used to represet a logo-->
-                <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgLogo"/>
+                <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgPlayerLogo"/>
                 <!--Buttons - CHANGE EVENTHANDLERS IN MAIN TO ACCOMEDATE FOR NEW EVENTHANDLER NAME - VERY IMPORTANT!!!-->
                 <Button x:Name="BtnPlayerCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
                 <Button x:Name="BtnPlayerEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75" Click="BtnEdit_Click"/>
@@ -42,6 +42,7 @@
                 <!--Textbox-->
                 <!--Label-->
                 <!--Image used for logo-->
+                <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTeamMembersLogo"/>
                 <!--Buttons-->
                 <Button x:Name="BtnTeamMemberCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
                 <Button x:Name="BtnTeamMemberEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
@@ -56,6 +57,7 @@
                 <!--Textbox-->
                 <!--Label-->
                 <!--Image used for logo-->
+                <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTeamLogo"/>
                 <!--Buttons-->
                 <Button x:Name="BtnTeamCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
                 <Button x:Name="BtnTeamEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
@@ -70,6 +72,7 @@
                 <!--Textbox-->
                 <!--Label-->
                 <!--Image used for logo-->
+                <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTournamentLogo"/>
                 <!--Buttons-->
                 <Button x:Name="BtnTournamentCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
                 <Button x:Name="BtnTournamentEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
@@ -84,6 +87,7 @@
                 <!--Textbox-->
                 <!--Label-->
                 <!--Image used for logo-->
+                <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTournamentOverviewLogo"/>
                 <!--Buttons-->
                 <Button x:Name="BtnTournamentOverviewCreate" Content="Create" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="76"/>
                 <Button x:Name="BtnTournamentOverviewEdit" Content="Edit" HorizontalAlignment="Left" Margin="11,438,0,0" VerticalAlignment="Top" Width="75"/>
