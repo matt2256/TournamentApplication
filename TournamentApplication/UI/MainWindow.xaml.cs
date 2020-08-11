@@ -83,7 +83,7 @@ namespace UI
         {
             Create _Create = new Create();
 
-            _Create.CreateTeamMembers(TBTeamMemberName.Text);
+            _Create.CreateTeamMembers(TBTeamMemberName.Text, TBTeamMemberTeamId.Text);
         }
 
         private void BtnTeamMemberEdit_Click(object sender, RoutedEventArgs e)

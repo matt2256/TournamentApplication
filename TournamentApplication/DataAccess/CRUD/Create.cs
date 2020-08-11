@@ -69,15 +69,18 @@ namespace DataAccess.CRUD
         /// <summary>
         /// Represent a method for creating TeamMembers data
         /// </summary>
-        public void CreateTeamMembers(string _teamMembers)
+        public void CreateTeamMembers(string _teamMemberName, string _teamMemberTeamId)
         {
             //Represent a object of of TournamentEntities called context
             TournamentEntities context = new TournamentEntities();
 
             TeamMember teamMembers = new TeamMember()
             {
-                //Represent the name (string) of the team 
-                TeamID = _teamMembers//set to custom textbox in wpf 
+                //Represent the TeamID (name of the team) (string) of the team 
+                TeamID = _teamMemberTeamId,//set to custom textbox in wpf 
+
+                //Represent the PlayerName (Name of the player) (string) of the player
+                PlayerName = _teamMemberName
             };
 
             context.TeamMembers.Add(teamMembers);
