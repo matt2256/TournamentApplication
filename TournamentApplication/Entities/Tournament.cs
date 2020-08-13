@@ -17,7 +17,5 @@ namespace Entities
         public int Id { get; set; }
         public string TournamentName { get; set; }
         public Nullable<int> TournamentID { get; set; }
-    
-        public virtual TournamentEntry TournamentEntry { get; set; }
     }
 }

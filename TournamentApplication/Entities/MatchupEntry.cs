@@ -19,7 +19,5 @@ namespace Entities
         public Nullable<int> ParrentMatchupID { get; set; }
         public int TeamCompedingID { get; set; }
         public Nullable<int> Score { get; set; }
-    
-        public virtual Matchup Matchup { get; set; }
     }
 }

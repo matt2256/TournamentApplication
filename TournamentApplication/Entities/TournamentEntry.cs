@@ -14,18 +14,8 @@ namespace Entities
     
     public partial class TournamentEntry
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TournamentEntry()
-        {
-            this.Tournaments = new HashSet<Tournament>();
-        }
-    
         public int Id { get; set; }
         public int TournamentID { get; set; }
         public string TeamID_Tournament { get; set; }
-    
-        public virtual Team Team { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tournament> Tournaments { get; set; }
     }
 }

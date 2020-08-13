@@ -65,90 +65,6 @@
           <Property Name="TournamentName" Type="varchar" MaxLength="50" />
           <Property Name="TournamentID" Type="int" />
         </EntityType>
-        <Association Name="FK_Matchup_TeamID_One">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
-          <End Role="Matchup" Type="Self.Matchup" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teams">
-              <PropertyRef Name="TeamID" />
-            </Principal>
-            <Dependent Role="Matchup">
-              <PropertyRef Name="TeamID_One" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Matchup_TeamID_Two">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
-          <End Role="Matchup" Type="Self.Matchup" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teams">
-              <PropertyRef Name="TeamID" />
-            </Principal>
-            <Dependent Role="Matchup">
-              <PropertyRef Name="TeamID_Two" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MatchupEntries_TeamCompeding">
-          <End Role="Matchup" Type="Self.Matchup" Multiplicity="1" />
-          <End Role="MatchupEntries" Type="Self.MatchupEntries" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Matchup">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MatchupEntries">
-              <PropertyRef Name="TeamCompedingID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TeamMembers_PeoplePlayerName">
-          <End Role="People" Type="Self.People" Multiplicity="1" />
-          <End Role="TeamMembers" Type="Self.TeamMembers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="People">
-              <PropertyRef Name="PeoplePlayerName" />
-            </Principal>
-            <Dependent Role="TeamMembers">
-              <PropertyRef Name="PlayerName" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TeamMembers_TeamId">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
-          <End Role="TeamMembers" Type="Self.TeamMembers" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teams">
-              <PropertyRef Name="TeamID" />
-            </Principal>
-            <Dependent Role="TeamMembers">
-              <PropertyRef Name="TeamID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TournamentEntries_TeamID_Tournament">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="0..1" />
-          <End Role="TournamentEntries" Type="Self.TournamentEntries" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teams">
-              <PropertyRef Name="TeamID" />
-            </Principal>
-            <Dependent Role="TournamentEntries">
-              <PropertyRef Name="TeamID_Tournament" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tournaments_TournamentID">
-          <End Role="TournamentEntries" Type="Self.TournamentEntries" Multiplicity="0..1" />
-          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TournamentEntries">
-              <PropertyRef Name="TournamentID" />
-            </Principal>
-            <Dependent Role="Tournaments">
-              <PropertyRef Name="TournamentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="TournamentModelStoreContainer">
           <EntitySet Name="Matchup" EntityType="Self.Matchup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MatchupEntries" EntityType="Self.MatchupEntries" Schema="dbo" store:Type="Tables" />
@@ -157,34 +73,6 @@
           <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TournamentEntries" EntityType="Self.TournamentEntries" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tournaments" EntityType="Self.Tournaments" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Matchup_TeamID_One" Association="Self.FK_Matchup_TeamID_One">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="Matchup" EntitySet="Matchup" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Matchup_TeamID_Two" Association="Self.FK_Matchup_TeamID_Two">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="Matchup" EntitySet="Matchup" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MatchupEntries_TeamCompeding" Association="Self.FK_MatchupEntries_TeamCompeding">
-            <End Role="Matchup" EntitySet="Matchup" />
-            <End Role="MatchupEntries" EntitySet="MatchupEntries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TeamMembers_PeoplePlayerName" Association="Self.FK_TeamMembers_PeoplePlayerName">
-            <End Role="People" EntitySet="People" />
-            <End Role="TeamMembers" EntitySet="TeamMembers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TeamMembers_TeamId" Association="Self.FK_TeamMembers_TeamId">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="TeamMembers" EntitySet="TeamMembers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TournamentEntries_TeamID_Tournament" Association="Self.FK_TournamentEntries_TeamID_Tournament">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="TournamentEntries" EntitySet="TournamentEntries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tournaments_TournamentID" Association="Self.FK_Tournaments_TournamentID">
-            <End Role="TournamentEntries" EntitySet="TournamentEntries" />
-            <End Role="Tournaments" EntitySet="Tournaments" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -200,9 +88,6 @@
           <Property Name="MatchupRound" Type="Int32" />
           <Property Name="TeamID_One" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TeamID_Two" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Team" Relationship="Self.FK_Matchup_TeamID_One" FromRole="Matchup" ToRole="Teams" />
-          <NavigationProperty Name="Team1" Relationship="Self.FK_Matchup_TeamID_Two" FromRole="Matchup" ToRole="Teams" />
-          <NavigationProperty Name="MatchupEntries" Relationship="Self.FK_MatchupEntries_TeamCompeding" FromRole="Matchup" ToRole="MatchupEntries" />
         </EntityType>
         <EntityType Name="MatchupEntry">
           <Key>
@@ -213,7 +98,6 @@
           <Property Name="ParrentMatchupID" Type="Int32" />
           <Property Name="TeamCompedingID" Type="Int32" Nullable="false" />
           <Property Name="Score" Type="Int32" />
-          <NavigationProperty Name="Matchup" Relationship="Self.FK_MatchupEntries_TeamCompeding" FromRole="MatchupEntries" ToRole="Matchup" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -223,7 +107,6 @@
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PeoplePlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="TeamMembers" Relationship="Self.FK_TeamMembers_PeoplePlayerName" FromRole="People" ToRole="TeamMembers" />
         </EntityType>
         <EntityType Name="TeamMember">
           <Key>
@@ -232,8 +115,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TeamID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Person" Relationship="Self.FK_TeamMembers_PeoplePlayerName" FromRole="TeamMembers" ToRole="People" />
-          <NavigationProperty Name="Team" Relationship="Self.FK_TeamMembers_TeamId" FromRole="TeamMembers" ToRole="Teams" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -241,10 +122,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TeamID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Matchups" Relationship="Self.FK_Matchup_TeamID_One" FromRole="Teams" ToRole="Matchup" />
-          <NavigationProperty Name="Matchups1" Relationship="Self.FK_Matchup_TeamID_Two" FromRole="Teams" ToRole="Matchup" />
-          <NavigationProperty Name="TeamMembers" Relationship="Self.FK_TeamMembers_TeamId" FromRole="Teams" ToRole="TeamMembers" />
-          <NavigationProperty Name="TournamentEntries" Relationship="Self.FK_TournamentEntries_TeamID_Tournament" FromRole="Teams" ToRole="TournamentEntries" />
         </EntityType>
         <EntityType Name="TournamentEntry">
           <Key>
@@ -253,8 +130,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TournamentID" Type="Int32" Nullable="false" />
           <Property Name="TeamID_Tournament" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Team" Relationship="Self.FK_TournamentEntries_TeamID_Tournament" FromRole="TournamentEntries" ToRole="Teams" />
-          <NavigationProperty Name="Tournaments" Relationship="Self.FK_Tournaments_TournamentID" FromRole="TournamentEntries" ToRole="Tournaments" />
         </EntityType>
         <EntityType Name="Tournament">
           <Key>
@@ -263,92 +138,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TournamentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TournamentID" Type="Int32" />
-          <NavigationProperty Name="TournamentEntry" Relationship="Self.FK_Tournaments_TournamentID" FromRole="Tournaments" ToRole="TournamentEntries" />
         </EntityType>
-        <Association Name="FK_Matchup_TeamID_One">
-          <End Role="Teams" Type="Self.Team" Multiplicity="1" />
-          <End Role="Matchup" Type="Self.Matchup" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teams">
-              <PropertyRef Name="TeamID" />
-            </Principal>
-            <Dependent Role="Matchup">
-              <PropertyRef Name="TeamID_One" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Matchup_TeamID_Two">
-          <End Role="Teams" Type="Self.Team" Multiplicity="1" />
-          <End Role="Matchup" Type="Self.Matchup" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teams">
-              <PropertyRef Name="TeamID" />
-            </Principal>
-            <Dependent Role="Matchup">
-              <PropertyRef Name="TeamID_Two" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MatchupEntries_TeamCompeding">
-          <End Role="Matchup" Type="Self.Matchup" Multiplicity="1" />
-          <End Role="MatchupEntries" Type="Self.MatchupEntry" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Matchup">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MatchupEntries">
-              <PropertyRef Name="TeamCompedingID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TeamMembers_PeoplePlayerName">
-          <End Role="People" Type="Self.Person" Multiplicity="1" />
-          <End Role="TeamMembers" Type="Self.TeamMember" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="People">
-              <PropertyRef Name="PeoplePlayerName" />
-            </Principal>
-            <Dependent Role="TeamMembers">
-              <PropertyRef Name="PlayerName" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TeamMembers_TeamId">
-          <End Role="Teams" Type="Self.Team" Multiplicity="1" />
-          <End Role="TeamMembers" Type="Self.TeamMember" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teams">
-              <PropertyRef Name="TeamID" />
-            </Principal>
-            <Dependent Role="TeamMembers">
-              <PropertyRef Name="TeamID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TournamentEntries_TeamID_Tournament">
-          <End Role="Teams" Type="Self.Team" Multiplicity="0..1" />
-          <End Role="TournamentEntries" Type="Self.TournamentEntry" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teams">
-              <PropertyRef Name="TeamID" />
-            </Principal>
-            <Dependent Role="TournamentEntries">
-              <PropertyRef Name="TeamID_Tournament" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tournaments_TournamentID">
-          <End Role="TournamentEntries" Type="Self.TournamentEntry" Multiplicity="0..1" />
-          <End Role="Tournaments" Type="Self.Tournament" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TournamentEntries">
-              <PropertyRef Name="TournamentID" />
-            </Principal>
-            <Dependent Role="Tournaments">
-              <PropertyRef Name="TournamentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="TournamentEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Matchups" EntityType="Self.Matchup" />
           <EntitySet Name="MatchupEntries" EntityType="Self.MatchupEntry" />
@@ -357,34 +147,6 @@
           <EntitySet Name="Teams" EntityType="Self.Team" />
           <EntitySet Name="TournamentEntries" EntityType="Self.TournamentEntry" />
           <EntitySet Name="Tournaments" EntityType="Self.Tournament" />
-          <AssociationSet Name="FK_Matchup_TeamID_One" Association="Self.FK_Matchup_TeamID_One">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="Matchup" EntitySet="Matchups" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Matchup_TeamID_Two" Association="Self.FK_Matchup_TeamID_Two">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="Matchup" EntitySet="Matchups" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MatchupEntries_TeamCompeding" Association="Self.FK_MatchupEntries_TeamCompeding">
-            <End Role="Matchup" EntitySet="Matchups" />
-            <End Role="MatchupEntries" EntitySet="MatchupEntries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TeamMembers_PeoplePlayerName" Association="Self.FK_TeamMembers_PeoplePlayerName">
-            <End Role="People" EntitySet="People" />
-            <End Role="TeamMembers" EntitySet="TeamMembers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TeamMembers_TeamId" Association="Self.FK_TeamMembers_TeamId">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="TeamMembers" EntitySet="TeamMembers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TournamentEntries_TeamID_Tournament" Association="Self.FK_TournamentEntries_TeamID_Tournament">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="TournamentEntries" EntitySet="TournamentEntries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tournaments_TournamentID" Association="Self.FK_Tournaments_TournamentID">
-            <End Role="TournamentEntries" EntitySet="TournamentEntries" />
-            <End Role="Tournaments" EntitySet="Tournaments" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>

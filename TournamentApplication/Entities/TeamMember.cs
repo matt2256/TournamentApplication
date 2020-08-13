@@ -17,8 +17,5 @@ namespace Entities
         public int Id { get; set; }
         public string TeamID { get; set; }
         public string PlayerName { get; set; }
-    
-        public virtual Person Person { get; set; }
-        public virtual Team Team { get; set; }
     }
 }

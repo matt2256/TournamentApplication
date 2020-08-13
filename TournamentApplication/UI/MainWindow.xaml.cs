@@ -56,7 +56,11 @@ namespace UI
 
         private void BtnPlayerEdit_Click(object sender, RoutedEventArgs e)
         {
+            Update _update = new Update();
 
+            _update.UpdatePerson(Convert.ToInt32(TBPlayerId.Text), TBPlayerFirstName.Text, TBPlayerLastName.Text);
+
+            LoadPlayerDtg();
         }
 
         private void BtnPlayerDelete_Click(object sender, RoutedEventArgs e)
@@ -84,6 +88,8 @@ namespace UI
             Create _Create = new Create();
 
             _Create.CreateTeamMembers(TBTeamMemberName.Text, TBTeamMemberTeamId.Text);
+
+            LoadTeamMemberDtg();
         }
 
         private void BtnTeamMemberEdit_Click(object sender, RoutedEventArgs e)
@@ -145,6 +151,18 @@ namespace UI
             Create _create = new Create();
 
             _create.CreateTournaments(TBTournamentName.Text);
+
+            LoadTournamentDtg();
+        }
+        public void LoadTournamentDtg()
+        {
+            CollectionViewSource TournamentSource = ((CollectionViewSource)(this.FindResource("TournamentSource")));
+
+            TournamentEntities _context = new TournamentEntities();
+
+            _context.Tournaments.Load();
+
+            TournamentSource.Source = _context.Tournaments.Local;
         }
 
         private void BtnTournamentEdit_Click(object sender, RoutedEventArgs e)
@@ -157,16 +175,7 @@ namespace UI
 
         }
 
-        public void LoadTournamentDtg()
-        {
-            CollectionViewSource Tournament = ((CollectionViewSource)(this.FindResource("TournamentSource")));
-
-            TournamentEntities _context = new TournamentEntities();
-
-            _context.Teams.Load();
-
-            Tournament.Source = _context.Teams.Local;
-        }
+        
         #endregion
     }
 }

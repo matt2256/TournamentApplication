@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UI.Windows"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="600" Loaded="Window_Loaded">
     <Window.Resources>
@@ -18,13 +17,15 @@
             <!--Player UI content-->
             <Grid>
                 <!--Textbox-->
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="158,213,0,0" TextWrapping="Wrap" x:Name="TBPlayerFirstName" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="158,165,0,0" TextWrapping="Wrap" x:Name="TBPlayerId" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox HorizontalAlignment="Left" Height="24" Margin="158,213,0,0" TextWrapping="Wrap" x:Name="TBPlayerFirstName" Text="" VerticalAlignment="Top" Width="120"/>
                 <TextBox HorizontalAlignment="Left" Height="23" Margin="158,265,0,0" TextWrapping="Wrap" x:Name="TBPlayerLastName" Text="" VerticalAlignment="Top" Width="120"/>
                 <TextBox HorizontalAlignment="Left" Height="27" Margin="158,315,0,0" TextWrapping="Wrap" x:Name="TBPlayerInGameName" Text="" VerticalAlignment="Top" Width="120"/>
                 <!--Label - MAIN HEADER-->
                 <Label Content="Spiller" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbPlayer"/>
                 <!--Labels for textbox information-->
-                <Label Content="First Name" x:Name="LbPlayerFirstName" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
+                <Label Content="Id" x:Name="LbPlayerId" HorizontalAlignment="Left" Margin="11,164,0,0" VerticalAlignment="Top" Width="97" Height="24"/>
+                <Label Content="First Name" x:Name="LbPlayerFirstName" HorizontalAlignment="Left" Margin="11,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Last Name" x:Name="LbPlayerLastName" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Player Name" x:Name="LbPlayerInGameName" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="97" Height="27"/>
                 <!--Image used to represet a logo-->

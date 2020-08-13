@@ -89,6 +89,25 @@ namespace DataAccess.CRUD
         }
 
         /// <summary>
+        /// Represent a method for creating Tournaments
+        /// </summary>
+        public void CreateTournaments(string _tourName)
+        {
+            //Represent a object of of TournamentEntities called context
+            TournamentEntities context = new TournamentEntities();
+
+            Tournament tournaments = new Tournament
+            {
+                //Represent the name (string) of the tournament
+                TournamentName = _tourName // Set to custom textbox in wpf 
+            };
+
+            context.Tournaments.Add(tournaments);
+
+            context.SaveChanges();
+        }
+
+        /// <summary>
         /// Represent a method for creating Teams data
         /// </summary>
         public void CreateTeams(string _teamName)
@@ -126,24 +145,7 @@ namespace DataAccess.CRUD
             context.SaveChanges();
         }
 
-        /// <summary>
-        /// Represent a method for creating Tournaments
-        /// </summary>
-        public void CreateTournaments(string _tourName)
-        {
-            //Represent a object of of TournamentEntities called context
-            TournamentEntities context = new TournamentEntities();
-
-            Tournament tournaments = new Tournament
-            {
-                //Represent the name (string) of the tournament
-                TournamentName = _tourName // Set to custom textbox in wpf 
-            };
-
-            context.Tournaments.Add(tournaments);
-
-            context.SaveChanges();
-        }
+        
 
     }
 }

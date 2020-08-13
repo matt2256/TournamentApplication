@@ -4,21 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="096596c44cb14afda6bb6f5dfd7a89c3" Name="Diagram1">
-        <EntityTypeShape EntityType="TournamentModel.Matchup" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentModel.MatchupEntry" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentModel.Person" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentModel.TeamMember" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentModel.Team" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentModel.TournamentEntry" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentModel.Tournament" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
-        <AssociationConnector Association="TournamentModel.FK_Matchup_TeamID_One" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentModel.FK_Matchup_TeamID_Two" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentModel.FK_MatchupEntries_TeamCompeding" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentModel.FK_TeamMembers_PeoplePlayerName" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentModel.FK_TeamMembers_TeamId" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentModel.FK_TournamentEntries_TeamID_Tournament" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentModel.FK_Tournaments_TournamentID" ManuallyRouted="false" />
+      <Diagram DiagramId="378380aae70649fea9bec76fb5465b73" Name="Diagram1">
+        <EntityTypeShape EntityType="TournamentModel.Matchup" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentModel.MatchupEntry" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentModel.Person" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentModel.TeamMember" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentModel.Team" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentModel.TournamentEntry" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentModel.Tournament" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
