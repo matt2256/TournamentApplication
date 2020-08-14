@@ -10,21 +10,21 @@ namespace DataAccess.CRUD
 {
     public class Create
     {
-        
 
+        #region Matchup and MatchupEntitries
         /// <summary>
-        /// Represent method for creating matchup data 
+        /// Represent method for creating matchup data set
         /// </summary>
         public void CreationMatchup()
         {
             Matchup matchup = new Matchup
             {
-                
+
             };
         }
 
         /// <summary>
-        /// Represent a method for creating MatchupEntries data
+        /// Represent a method for creating MatchupEntries data set
         /// </summary>
         public void CreateMatchupEntries()
         {
@@ -40,10 +40,15 @@ namespace DataAccess.CRUD
                 //Score = // set to custom textbox in wpf
             };
         }
+        #endregion
 
+        #region Person
         /// <summary>
-        /// Represent a method for creating People Data (Player)
+        /// Represent a method for creating a person data set
         /// </summary>
+        /// <param name="_Fname">string</param>
+        /// <param name="_Lname">string</param>
+        /// <param name="_IGname">string</param>
         public void CreatePeople(string _Fname, string _Lname, string _IGname)
         {
             //Represent a object of of TournamentEntities called context
@@ -65,10 +70,56 @@ namespace DataAccess.CRUD
 
             context.SaveChanges();
         }
+        #endregion
+
+        #region Tournament and TournamenEntitries
+        /// <summary>
+        /// Represent a method for creating a tournament data set
+        /// </summary>
+        /// <param name="_tourName">string</param>
+        public void CreateTournaments(string _tourName)
+        {
+            //Represent a object of of TournamentEntities called context
+            TournamentEntities context = new TournamentEntities();
+
+            Tournament tournaments = new Tournament
+            {
+                //Represent the name (string) of the tournament
+                TournamentName = _tourName // Set to custom textbox in wpf 
+            };
+
+            context.Tournaments.Add(tournaments);
+
+            context.SaveChanges();
+        }
 
         /// <summary>
-        /// Represent a method for creating TeamMembers data
+        /// Represent a method for creating a tournament entry data set 
         /// </summary>
+        /// <param name="_tourID">int</param>
+        public void CreateTournamentEntries(int _tourID)
+        {
+            //Represent a object of of TournamentEntities called context
+            TournamentEntities context = new TournamentEntities();
+
+            TournamentEntry tournamentEntries = new TournamentEntry
+            {
+                //Represent the id (int) of the entries to the tournament
+                TournamentID = _tourID // Set to custom textbox in wpf 
+            };
+
+            context.TournamentEntries.Add(tournamentEntries);
+
+            context.SaveChanges();
+        }
+        #endregion
+
+        #region Teams and TeamMembers
+        /// <summary>
+        /// Represent a method for creating a team member data set
+        /// </summary>
+        /// <param name="_teamMemberName">string</param>
+        /// <param name="_teamMemberTeamId">string</param>
         public void CreateTeamMembers(string _teamMemberName, string _teamMemberTeamId)
         {
             //Represent a object of of TournamentEntities called context
@@ -88,28 +139,12 @@ namespace DataAccess.CRUD
             context.SaveChanges();
         }
 
-        /// <summary>
-        /// Represent a method for creating Tournaments
-        /// </summary>
-        public void CreateTournaments(string _tourName)
-        {
-            //Represent a object of of TournamentEntities called context
-            TournamentEntities context = new TournamentEntities();
 
-            Tournament tournaments = new Tournament
-            {
-                //Represent the name (string) of the tournament
-                TournamentName = _tourName // Set to custom textbox in wpf 
-            };
-
-            context.Tournaments.Add(tournaments);
-
-            context.SaveChanges();
-        }
 
         /// <summary>
-        /// Represent a method for creating Teams data
+        /// Represent a method for creating a team data set
         /// </summary>
+        /// <param name="_teamName">string</param>
         public void CreateTeams(string _teamName)
         {
             //Represent a object of of TournamentEntities called context
@@ -125,27 +160,6 @@ namespace DataAccess.CRUD
 
             context.SaveChanges();
         }
-
-        /// <summary>
-        /// Represent a method for creating TournamentsEntries data 
-        /// </summary>
-        public void CreateTournamentEntries(int _tourID)
-        {
-            //Represent a object of of TournamentEntities called context
-            TournamentEntities context = new TournamentEntities();
-
-            TournamentEntry tournamentEntries = new TournamentEntry
-            {
-                //Represent the id (int) of the entries to the tournament
-                TournamentID = _tourID // Set to custom textbox in wpf 
-            };
-
-            context.TournamentEntries.Add(tournamentEntries);
-
-            context.SaveChanges();
-        }
-
-        
-
+        #endregion
     }
 }

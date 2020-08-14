@@ -11,7 +11,7 @@ namespace DataAccess.CRUD
     {
         #region Person
         /// <summary>
-        /// Represent a method for updating a specifik persons data 
+        /// Represent a method for updating a specifik persons data set 
         /// </summary>
         /// <param name="_fname">string</param>
         /// <param name="_lname">string</param>
@@ -30,7 +30,7 @@ namespace DataAccess.CRUD
 
         #region Team and TeamMember
         /// <summary>
-        /// Represent a method for updating a specifik team members data
+        /// Represent a method for updating a specifik team members data set
         /// </summary>
         /// <param name="_teamId">string</param>
         /// <param name="_playerName">string</param>
@@ -47,7 +47,7 @@ namespace DataAccess.CRUD
         }
 
         /// <summary>
-        /// Represent a method for updating a specifik teams data
+        /// Represent a method for updating a specifik teams data set
         /// </summary>
         /// <param name="_teamId">string</param>
         public void UpdateTeam(int _id, string _teamId)
@@ -64,7 +64,7 @@ namespace DataAccess.CRUD
 
         #region Matchup and MatchupEntitries
         /// <summary>
-        /// Represent a method for updating a specifik matchups data
+        /// Represent a method for updating a specifik matchups data set
         /// </summary>
         /// <param name="_winId">int</param>
         /// <param name="_matchRound">int</param>
@@ -85,7 +85,7 @@ namespace DataAccess.CRUD
         }
 
         /// <summary>
-        /// Represent a method for updating a specifik matchup entry´s data
+        /// Represent a method for updating a specifik matchup entry´s data set
         /// </summary>
         /// <param name="_matchupId">int</param>
         /// <param name="_parrentMatchupId">int</param>
@@ -108,7 +108,7 @@ namespace DataAccess.CRUD
 
         #region Tournament and TournamentEntitries
         /// <summary>
-        /// Represent a method for updating a specifik tournaments data 
+        /// Represent a method for updating a specifik tournaments data set
         /// </summary>
         /// <param name="_tournamentName">string</param>
         /// <param name="_tournamentId">int</param>
@@ -125,7 +125,7 @@ namespace DataAccess.CRUD
         }
 
         /// <summary>
-        /// Represent a method for updating a specifik tournament entry´s data 
+        /// Represent a method for updating a specifik tournament entry´s data set
         /// </summary>
         /// <param name="_tournamentTeamId">string</param>
         public void UpdateTournamentEntitries(int _id, string _tournamentTeamId)

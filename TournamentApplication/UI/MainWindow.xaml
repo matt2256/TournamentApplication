@@ -88,11 +88,13 @@
                 <!--Textbox-->
                 <TextBox HorizontalAlignment="Left" Height="23" Margin="139,213,0,0" TextWrapping="Wrap" x:Name="TBTournamentID" Text="" VerticalAlignment="Top" Width="120"/>
                 <TextBox HorizontalAlignment="Left" Height="24" Margin="139,241,0,0" TextWrapping="Wrap" x:Name="TBTournamentName" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox HorizontalAlignment="Left" Height="24" Margin="139,270,0,0" TextWrapping="Wrap" x:Name="TBTournamentNameID" Text="" VerticalAlignment="Top" Width="120"/>
                 <!--Label - MAIN HEADER-->
                 <Label Content="Opret tunering" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,32,0,0" FontSize="36" x:Name="LbTournament"/>
                 <!--Label for textbox information-->
                 <Label Content="Id" x:Name="LbTournamentID" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" Width="97" Height="23"/>
                 <Label Content="Tournament name" x:Name="LbTournamentName" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="110" Height="23"/>
+                <Label Content="Tournament id" x:Name="LbTournamentNameid" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Width="110" Height="23"/>
                 <!--Image used for logo-->
                 <Image HorizontalAlignment="Left" Height="150" Margin="418,10,0,0" VerticalAlignment="Top" Width="158" x:Name="ImgTournamentLogo"/>
                 <!--Buttons-->

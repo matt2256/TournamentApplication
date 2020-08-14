@@ -65,7 +65,11 @@ namespace UI
 
         private void BtnPlayerDelete_Click(object sender, RoutedEventArgs e)
         {
+            Delete delete = new Delete();
 
+            delete.DeletePerson(Convert.ToInt32(TBPlayerId.Text));
+
+            LoadPlayerDtg();
         }
 
         public void LoadPlayerDtg()
@@ -94,12 +98,20 @@ namespace UI
 
         private void BtnTeamMemberEdit_Click(object sender, RoutedEventArgs e)
         {
+            Update update = new Update();
 
+            update.UpdateTeamMember(Convert.ToInt32(TBTeamMemberID.Text), TBTeamMemberTeamId.Text, TBTeamMemberName.Text);
+
+            LoadTeamMemberDtg();
         }
 
         private void BtnTeamMemberDelete_Click(object sender, RoutedEventArgs e)
         {
+            Delete delete = new Delete();
 
+            delete.DeleteTeamMember(Convert.ToInt32(TBTeamMemberID.Text));
+
+            LoadTeamMemberDtg();
         }
 
         public void LoadTeamMemberDtg()
@@ -122,14 +134,23 @@ namespace UI
             _create.CreateTeams(TBTeamTeamID.Text);
         }
 
+        //VIRKER FØRST NÅR "TeamID" IKKE ER PRIMARY KEY!!! - DET SKAL ÆNDRES
         private void BtnTeamEdit_Click(object sender, RoutedEventArgs e)
         {
+            Update update = new Update();
 
+            update.UpdateTeam(Convert.ToInt32(TBTeamID.Text), TBTeamTeamID.Text);
+
+            LoadTeamDtg();
         }
 
         private void BtnTeamDelete_Click(object sender, RoutedEventArgs e)
         {
+            Delete delete = new Delete();
 
+            delete.DeleteTeam(Convert.ToInt32(TBTeamID.Text));
+
+            LoadTeamDtg();
         }
 
         public void LoadTeamDtg()
@@ -154,6 +175,26 @@ namespace UI
 
             LoadTournamentDtg();
         }
+   
+
+        private void BtnTournamentEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Update update = new Update();
+
+            update.UpdateTournament(Convert.ToInt32(TBTournamentID.Text), TBTournamentName.Text, Convert.ToInt32(TBTournamentNameID.Text));
+
+            LoadTournamentDtg();
+        }
+
+        private void BtnTournamentDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Delete delete = new Delete();
+
+            delete.DeleteTournament(Convert.ToInt32(TBTournamentID.Text));
+
+            LoadTournamentDtg();
+        }
+
         public void LoadTournamentDtg()
         {
             CollectionViewSource TournamentSource = ((CollectionViewSource)(this.FindResource("TournamentSource")));
@@ -164,18 +205,6 @@ namespace UI
 
             TournamentSource.Source = _context.Tournaments.Local;
         }
-
-        private void BtnTournamentEdit_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnTournamentDelete_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        
         #endregion
     }
 }

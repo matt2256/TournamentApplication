@@ -53,69 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Matchup.cs">
-      <DependentUpon>TournamentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MatchupEntry.cs">
-      <DependentUpon>TournamentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Person.cs">
-      <DependentUpon>TournamentModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Team.cs">
-      <DependentUpon>TournamentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TeamMember.cs">
-      <DependentUpon>TournamentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tournament.cs">
-      <DependentUpon>TournamentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TournamentEntry.cs">
-      <DependentUpon>TournamentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TournamentModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TournamentModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TournamentModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TournamentModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TournamentModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TournamentModel.edmx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="TournamentModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TournamentModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="TournamentModel.edmx.diagram">
-      <DependentUpon>TournamentModel.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="TournamentModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TournamentModel.edmx</DependentUpon>
-      <LastGenOutput>TournamentModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="TournamentModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TournamentModel.edmx</DependentUpon>
-      <LastGenOutput>TournamentModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
